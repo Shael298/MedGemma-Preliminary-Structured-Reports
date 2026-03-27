@@ -90,13 +90,14 @@ In short:
 ## Setup
 
 1. Create and activate a virtual environment
-2. Install dependencies with `pip install -e .`
-3. Copy `.env.example` to `.env`
-4. Set `HF_TOKEN`
-5. Optionally set `MEDGEMMA_MODEL_ID`  
+2. If you want GPU inference on an Nvidia machine, install a CUDA-enabled PyTorch build first. A plain `pip install` may pull CPU-only `torch` on Windows.
+3. Install dependencies with `pip install -e .`
+4. Copy `.env.example` to `.env`
+5. Set `HF_TOKEN`
+6. Optionally set `MEDGEMMA_MODEL_ID`  
    Default: `google/medgemma-1.5-4b-it`
-6. Run `python smoke_test.py`
-7. Run `streamlit run app.py`
+7. Run `python smoke_test.py`
+8. Run `streamlit run app.py`
 
 ## Safety
 
