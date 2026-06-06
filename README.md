@@ -15,7 +15,7 @@ This is not a diagnostic product. I built it as a project about making multimoda
   - confidence
   - limitations
   - follow-up
-- MedGemma is loaded locally with 4-bit quantization when CUDA is available
+- MedGemma is loaded locally with 4-bit quantisation when CUDA is available
 - Python assembles the final report structure instead of trusting one large model response end-to-end
 
 Current high-level flow:
@@ -28,9 +28,9 @@ Current high-level flow:
 
 ## 2) Main learning
 
-- **Quantization matters**: loading MedGemma in 4-bit on my laptop GPU was the practical way to make local inference usable at all.
+- **Quantisation matters**: loading MedGemma in 4-bit on my laptop GPU was the practical way to make local inference usable at all.
 - **One-shot JSON was fragile**: the model often misspelled keys, invented keys, emitted comments, or produced multiple JSON objects.
-- **Regex/repair logic helps but is not enough**: extracting JSON-looking text, stripping comments, repairing malformed JSON, and normalizing keys improved robustness, but did not fully solve the problem.
+- **Regex/repair logic helps but is not enough**: extracting JSON-looking text, stripping comments, repairing malformed JSON, and normalising keys improved robustness, but did not fully solve the problem.
 - **Prompting alone is not enough**: for sections like follow-up, the model still drifted into findings or boilerplate unless the code also validated the output shape.
 - **Smaller generations are easier to control**: generating one whole report was too unstable; generating one section at a time was much easier to clean and assemble.
 - **Section-specific cleanup is important**: impressions needed different filtering from findings; follow-up needed recommendation-only filtering; confidence needed a code-level backstop when the model returned `0.0`.
@@ -85,7 +85,7 @@ Why I ended up choosing this:
 
 In short:
 
-**The main decision I made was to stop treating the model like a perfect serializer and let Python own the final structure.**
+**The main decision I made was to stop treating the model like a perfect serialiser and let Python own the final structure.**
 
 ## Setup
 
